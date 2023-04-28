@@ -1,0 +1,66 @@
+@charset 'utf-8';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.container {
+  display: grid;
+  /* grid-template-columns: 320px 320px 320px; */
+  grid-template-columns: [🛵 バイク] 1fr [🇯🇵] 1fr [🪣] 1fr [🖊️];
+  /* grid-template-rows: 240px 240px; */
+  grid-template-rows: [🍊] 1fr [🐶] 1fr [🍱];
+  grid-gap: 20px;
+
+  grid-template-areas:
+    "🍇 お 🦊"
+    "🍑 🍑 🍑"
+  ;
+}
+
+.item:nth-child(3){
+  border: 5px solid #000;
+  /*
+  grid-column-start: 2;
+  grid-column-end: 3;
+  */
+  grid-column: 2 / 3;
+  grid-column: 🇯🇵 / 🪣;
+
+  /*
+  grid-row-start: 1;
+  grid-row-end: 2;
+  */
+  grid-row: 1 / 2;
+}
+
+.item:last-child {
+  grid-area: 🍑;
+  background-color:bisque;
+}
+
+@media screen and (max-width:650px) {
+  .container {
+    /* width: 320px; */
+    /* grid-template-columns: 155px 155px; */
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+}
