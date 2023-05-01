@@ -1,0 +1,69 @@
+@charset 'utf-8';
+
+.bg-001 {
+  background: url(../img/bg-stripe.png) left center repeat;
+}
+
+.bg-002 {
+  background: #98807b url(../img/bg-cat.png) center bottom no-repeat;
+  background-color: #98807b;
+  background-image: url(../img/bg-cat.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+div:not(.bg-001):not(.bg-002) {
+  background: url(../img/bg-cat-light.png) no-repeat right bottom;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ccc;
+}
+
+.px {
+  background-size: 150px 50px!important;/* 幅 高さ */
+}
+
+.per {
+  background-size: 50% 50%!important;
+}
+
+.cover {
+  background-size: cover!important;
+}
+
+.contain {
+  background-size: contain!important;
+}
+
+.bg-003 {
+  background: 
+    url(../img/bg-cat.png) no-repeat left bottom,
+    url(../img/bg-stripe.png) center center
+  ;
+  width: 300px;
+  height: 300px;
+}
+
+.bg-004 {
+  background:
+    url(../img/bg-frame.png) center center,
+    linear-gradient(322deg, rgba(247,98,16,1) 0%, rgba(27,228,128,1) 26%, rgba(38,209,118,1) 51%, rgba(181,182,28,1) 80%, rgba(166,10,152,1) 100%);
+  ;
+  width: 300px;
+  height: 300px;
+}
+
+.object-fit {
+  width: 50%;
+  max-width: 500px;
+  border: 1px solid #000;
+  height: 500px;
+}
+
+.object-fit img {
+  object-fit: cover;
+  object-position: 50% top;
+  width: 100%;
+  height: 100%;
+}
