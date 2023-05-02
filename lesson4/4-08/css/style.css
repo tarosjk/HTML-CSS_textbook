@@ -1,0 +1,49 @@
+@charset 'utf-8';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100%;
+  padding: 1em;
+  background: #eee;
+}
+
+p {
+  width: 200px;
+  height: 200px;
+  background: #ff0;
+  color: #ef476f;
+}
+
+span {
+  font-size: 20px;
+}
+
+/* flexbox */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* position */
+.position {
+  height: 300px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.position p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%,-50%); */
+  translate: -50% -50%;
+  rotate: 45deg;
+  scale: 1.5;
+  /* パーセンテージは要素の大きさに対するもの */
+}
