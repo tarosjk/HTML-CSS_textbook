@@ -1,0 +1,169 @@
+@charset 'utf-8';
+
+div {
+  width: 100px;
+  height: 100px;
+  padding: 1em;
+  margin: 2em 2em 4em;
+  background: #ad4444;
+  color: #fff;
+  font-size: 14px;
+}
+
+.width {
+  transition: width 0.5s ease-out 0s;
+  transition-property: width;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(.46,.17,.38,1.28);
+  transition-delay: 0s;
+}
+
+.width:hover {
+  width: 400px;
+}
+
+.circle {
+  transition: border-radius 0.2s;
+}
+.circle:hover {
+  border-radius: 50%;
+}
+
+.scale {
+  transition: 0.5s ease-in-out 1s transform;
+  transform-origin: left top;
+}
+.scale:hover {
+  transform: scale(1.5);
+}
+
+@keyframes zigzag {
+  0% {
+    transform: translate(0,0);
+  }
+  50% {
+    transform: translate(50px, 50px);
+  }
+  100% {
+    transform: translate(100px, 0);
+  }
+}
+.sample1 {
+  animation: zigzag 2s ease 0s 3 normal;
+  animation-name: zigzag;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 3;/*初期値:1*/
+  animation-direction: normal;
+}
+
+@keyframes scale-and-color {
+  0% {
+    background: #ad4444;
+    transform: scale(1);
+  }
+  50% {
+    background: #3946ad;
+    transform: scale(1.5);
+  }
+  100% {
+    background: #4dad48;
+    transform: scale(1);
+  }
+}
+
+.sample2 {
+  animation: scale-and-color 4s linear 0s infinite alternate;
+}
+
+img {
+  width: 100px;
+  margin-right: 2em;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sample3 {
+  animation: loading 1s linear 0s infinite;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(1);
+  }
+  8% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sample4 {
+  animation: heart .8s ease 0s infinite normal;
+}
+
+.gallery {
+  width: 400px;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+.gallery img {
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
+/* 1枚目の画像以外 */
+.gallery img:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gallery img {
+  animation: gallery 16s infinite both;
+  animation-fill-mode: both;
+}
+
+.gallery img:first-child{
+  /* animation: gallery 16s infinite; */
+}
+.gallery img:nth-child(2){
+  animation-delay: 4s;
+}
+.gallery img:nth-child(3){
+  animation-delay: 8s;
+}
+.gallery img:nth-child(4){
+  animation-delay: 12s;
+}
+
+@keyframes gallery {
+  0% {
+    opacity: 0;
+  }
+  6.25%, 25% {
+    opacity: 1;
+  }
+  31.25%, 100% {
+    opacity: 0;
+  }
+}
