@@ -1,3 +1,17 @@
 {
-  "svg.preview.background": "black"
+  "svg.preview.background": "black",
+  "liveSassCompile.settings.excludeList": [
+    "/**/node_modules/**",
+    "/.vscode/**",
+    "/**/lesson2/**",
+    "/**/abc.scss"
+  ],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../css/",
+      "savePathReplacementPairs": null
+    }
+  ]
 }

@@ -1,0 +1,12 @@
+@mixin test {
+  font-size: 20px;
+  color: blue;
+  background-color: yellow;
+  @content;
+}
+
+@mixin mq {
+  @media screen and (min-width:768px) {
+    @content;
+  }
+}

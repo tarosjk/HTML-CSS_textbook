@@ -1,0 +1,59 @@
+@use './mixins' as m;
+
+/* コンパイル後に残るコメント */
+// コンパイル後に残らないコメント
+// セクション見出し
+.h2-title {
+  position: relative;
+  text-transform: uppercase;
+  z-index: 100;
+
+  &::before {
+    --size: 40px;
+  
+    content: '';
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    background: #a5d1ff;
+    position: absolute;
+    left: 50%;
+    margin-left: calc(var(--size) / -2);
+    transform: rotate(45deg);
+    z-index: -100;
+  }
+}
+
+
+
+// ボタン
+.btn {
+  display: block;
+  padding: 20px 35px;
+  border-radius: 8px;
+  margin: 0 auto;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background: rgba(0 0 0/.7);
+    cursor: pointer;
+  }
+
+  &-reserve {
+    color: #fff;
+    background: #69f;
+  }
+}
+
+// インナー
+.inner {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.test {
+  @include m.test{
+    letter-spacing: 0.2em;
+  };
+}
