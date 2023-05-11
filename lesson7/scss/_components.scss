@@ -50,10 +50,8 @@
 .inner {
   padding: 0 15px;
   margin: 0 auto;
-}
 
-.test {
-  @include m.test{
-    letter-spacing: 0.2em;
-  };
+  @include m.mq {
+    max-width: 1200px;
+  }
 }

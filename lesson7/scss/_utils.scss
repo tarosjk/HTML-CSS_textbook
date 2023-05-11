@@ -1,3 +1,5 @@
+@use './mixins' as m;
+
 // テキスト関連
 .txt-center {
   text-align: center!important;
@@ -5,4 +7,23 @@
 
 .txt-lead {
   font-weight: 700;
+}
+
+// display関連
+.sp-only {
+  display: block;
+}
+
+.pc-only {
+  display: none;
+}
+
+@include m.mq {
+  .sp-only {
+    display: none;
+  }
+  
+  .pc-only {
+    display: block;
+  }
 }

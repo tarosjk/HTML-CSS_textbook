@@ -18,13 +18,41 @@
 </head>
 
 <body>
-  <h2 class="h2-title">section title</h2>
-  <p>あいうえおあいうえおあいうえおあいうえおあいうえお</p>
+  <header class="header">
+    <div class="header-logo-menu">
+      <!-- ロゴ -->
+      <div class="logo-area">
+        <img src="img/site-logo_bk.svg" alt="rental space MdN">
+      </div>
 
-  <button class="btn btn-reserve">あいうえお</button>
-  <input type="submit" class="btn btn-reserve" value="ボタン">
-  <a href="#" class="btn btn-reserve">a要素</a>
-  <header></header>
+      <!-- ナビ: モバイル用 -->
+      <nav class="sp-only">
+        <div class="gnav-toggle">
+          <!-- ハンバーガーメニュー関連 -->
+          <input type="checkbox" id="gnav-input" class="gnav-hidden">
+          <label for="gnav-input" id="gnav-open">
+            <span></span>
+          </label>
+          <label for="gnav-input" id="gnav-close" class="gnav-unshown">黒</label>
+          <!-- ナビゲーション -->
+          <div id="gnav-content">
+            <ul class="gnav-menu">
+              <li class="gnav-item"><a href="#service">Service<br>サービス</a></li>
+              <li class="gnav-item"><a href="#plan">Plan<br>プラン</a></li>
+              <li class="gnav-item"><a href="#access">Access<br>アクセス</a></li>
+              <li class="gnav-item"><a href="#contact">Contact<br>コンタクト</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ナビ: デスクトップ用 -->
+      <nav class="pc-only">
+        <ul class="gnav-menu"></ul>
+      </nav>
+    </div>
+  </header>
+
   <main>
     <section id="mv"></section>
     <section id="info"></section>

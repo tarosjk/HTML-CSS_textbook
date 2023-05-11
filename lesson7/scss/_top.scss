@@ -1,0 +1,74 @@
+// headerスタイル
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(255,230,230,0.9);
+  z-index: 200;
+}
+
+.header-logo-menu {
+  display: flex;
+  flex-direction: row;//おまけ
+  justify-content: space-between;
+}
+
+// サイトロゴ
+.logo-area {
+  width: 200px;
+  margin: 0;
+  text-align: left;
+}
+
+// ハンバーガーメニュー
+.gnav-toggle {
+  position: relative;
+  margin-top: 12px;
+}
+
+.gnav-hidden {
+  display: none;
+}
+
+#gnav-open {
+  display: inline-block;
+  width: 33px;
+  height: 22px;
+  vertical-align: middle;
+  cursor: pointer;
+
+  span,
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #555;
+    display: block;
+  }
+
+  span::before {
+    bottom: -8px;
+  }
+  span::after {
+    bottom: -16px;
+  }
+}
+
+#gnav-close {
+  position: fixed;
+  background: #000;
+  inset: 0;/* top: 0, left: 0, right: 0, bottom: 0; */
+  z-index: 90;
+  opacity: 0;
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#gnav-content {
+  overflow: auto;
+}
