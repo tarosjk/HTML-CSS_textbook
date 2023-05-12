@@ -1,0 +1,8 @@
+// CSSのカスタムプロパティ（変数）
+:root {
+  --color-primary: #85a7cc;
+  // 使用時 var(--color-primary)
+}
+
+// Sassの変数
+$color-primary: #85a7cc;

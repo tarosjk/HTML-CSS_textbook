@@ -1,4 +1,8 @@
 @charset "UTF-8";
+:root {
+  --color-primary: #85a7cc;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -188,13 +192,84 @@ section {
 #gnav-close {
   position: fixed;
   background: #000;
-  inset: 0; /* top: 0, left: 0, right: 0, bottom: 0; */
-  z-index: 90;
   opacity: 0;
-  display: none;
-  transition: all 0.3s ease-in-out;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #gnav-content {
   overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  width: 70%;
+  max-width: 300px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.3s ease-in-out;
+  transform: translateX(-105%);
+}
+
+#gnav-input:checked ~ #gnav-content {
+  transform: translateX(0%);
+}
+
+#gnav-input:checked ~ #gnav-close {
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+}
+
+.gnav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  text-transform: uppercase;
+}
+
+.gnav-item {
+  border-bottom: 2px dotted #eee;
+  margin: 10px;
+  padding-bottom: 20px;
+}
+.gnav-item a {
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+.gnav-item a::first-line {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-area {
+    width: 250px;
+  }
+  .gnav-menu {
+    flex-direction: row;
+    padding-top: 15px;
+    margin: 0;
+  }
+  .gnav-menu a {
+    color: #333;
+    width: 120px;
+  }
+  .gnav-menu a:hover {
+    color: #85a7cc;
+  }
+  .gnav-item {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

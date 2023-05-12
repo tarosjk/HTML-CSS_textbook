@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 * {
   box-sizing: border-box;
 }
@@ -18,7 +20,7 @@ h1,h2,h3 {
   text-align: center;
 }
 h3 {
-  color: #85a7cc;
+  color: $color-primary;
   font-size: 14px;
   margin-bottom: 20px;
 }
