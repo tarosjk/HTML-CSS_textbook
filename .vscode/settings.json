@@ -1,5 +1,5 @@
 {
-  "svg.preview.background": "black",
+  "svg.preview.background": "editor",
   "liveSassCompile.settings.excludeList": [
     "/**/node_modules/**",
     "/.vscode/**",
