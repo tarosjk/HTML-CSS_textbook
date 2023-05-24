@@ -1,0 +1,64 @@
+@use './mixins' as *;  // 例 mq
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'ヒラギノ角ゴ W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+  color: #333;
+}
+
+h1,h2,h3,h4 {
+  line-height: 1.5;
+}
+
+.heading-title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #75af57;
+  text-decoration: none;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;//下の隙間対策（ベースラインによるもの）
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+section, article {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto; // margin-inline: auto
+}
+
+@include mq {
+  .heading-title {
+    font-size: 36px;
+  }
+}
+
+@include mq(lg) {
+  body {
+    font-size: 16px;
+  }
+  .heading-title {
+    font-size: 48px;
+  }
+}

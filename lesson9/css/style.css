@@ -1,1 +1,158 @@
-@charset 'utf-8';
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.5;
+}
+
+.heading-title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #75af57;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+section, article {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .heading-title {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+  .heading-title {
+    font-size: 48px;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px 15px 10px;
+}
+
+.header-button {
+  position: fixed;
+  width: 75px;
+  height: 75px;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.header-button .icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: blue;
+  position: relative;
+}
+.header-button .icon::before,
+.header-button .icon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #eee;
+  left: 0;
+}
+.header-button .icon::before {
+  top: -8px;
+}
+.header-button .icon::after {
+  top: 8px;
+}
+
+.header-gnav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(105%);
+  transition: 0.3s ease;
+}
+.header-gnav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+}
+.header-gnav a {
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  padding: 0.8em;
+}
+
+@media screen and (min-width: 768px) {
+  .header-button {
+    display: none;
+  }
+  .header-gnav {
+    transform: translateX(0);
+    position: static;
+    background: none;
+  }
+  .header-gnav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 992px) {
+  header {
+    padding-top: 30px;
+  }
+  .header-logo {
+    flex-shrink: 0;
+  }
+  .header-logo img {
+    width: 360px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,12 @@
+@mixin mq($breakpoint: md) {
+  // 条件分岐
+  $minwidth: 768px;
+
+  @if $breakpoint == lg {
+    $minwidth: 992px;
+  }
+
+  @media screen and (min-width:$minwidth) {
+    @content;
+  }
+}
