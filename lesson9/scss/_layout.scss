@@ -8,6 +8,8 @@ header {
   max-width: 1300px;
   margin: 0 auto;
   padding: 20px 15px 10px;
+  position: relative;
+  z-index: 100;
 }
 
 .header-button {
@@ -23,11 +25,17 @@ header {
   align-items: center;
   z-index: 1;
 
+  .icon,
+  .icon::before,
+  .icon::after {
+    transition: .3s;
+  }
+
   .icon {
     display: block;
     width: 24px;
     height: 2px;
-    background: blue;
+    background: #eee;
     position: relative;
   }
   .icon::before,
@@ -46,6 +54,23 @@ header {
   .icon::after {
     top: 8px;
   }
+
+  // bodyにactiveが追加された時
+  body.active & .icon {
+    background: transparent;
+  }
+  body.active & .icon::before,
+  body.active & .icon::after {
+    top: 0;
+    background: #000;
+  }
+  body.active & .icon::before {
+    transform: rotate(45deg);
+  }
+  body.active & .icon::after {
+    transform: rotate(-45deg);
+  }
+
 }
 
 .header-gnav {
@@ -61,6 +86,10 @@ header {
   background: rgba(255 255 255/0.9);
   transform: translateX(105%);
   transition: .3s ease;
+
+  body.active & {
+    transform: translateX(0);
+  }
 
   ul {
     display: flex;
