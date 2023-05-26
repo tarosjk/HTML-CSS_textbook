@@ -190,6 +190,7 @@ footer {
 }
 footer small {
   color: yellow;
+  font-size: 150%;
 }
 
 .hero {
