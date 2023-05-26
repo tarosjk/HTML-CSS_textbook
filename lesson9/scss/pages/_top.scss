@@ -37,5 +37,128 @@
 }
 
 @include mq(lg) {
-  
+  .hero {
+    height: 660px;
+    
+    h1 {
+      font-size: 60px;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25em;
+    }
+
+    p {
+      font-size: 24px;
+      letter-spacing: 0.04em;
+    }
+  }
+}
+
+// 特徴
+.top-feature {
+  text-align: center;
+
+  &_box {
+    padding: 0 30px 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  a {
+    padding-bottom: 0.2em;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 18px;
+  }
+
+}
+
+@include mq {
+  .top-feature {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    background-color: #f3f2e8;
+    margin-top: -50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    &_box {
+      background-color: #fff;
+      max-width: 600px;
+      padding: 0 60px 30px 40px;
+    }
+
+    img {
+      margin-top: 40px;
+      margin-left: -30px;
+      max-width: 48vw;
+    }
+
+    &:last-of-type {
+      flex-direction: row-reverse;
+      padding-top: 50px;
+      padding-bottom: 80px;
+    }
+
+    &:last-of-type &_box {
+      padding-right: 40px;
+    }
+
+    &:last-of-type img {
+      margin-right: -30px;
+      margin-left: 0;
+    }
+  }
+}
+
+// NEWS
+.top-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  li {
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+  li a {
+    display: flex;
+    align-items: center;
+  }
+  li img {
+    // flex-basis: 90px;
+    max-width: 90px;
+  }
+
+  li &_info {
+    margin-left: 20px;
+  }
+  li time {
+    font-size: 14px;
+    color: #333;
+  }
+  li &_title {
+    margin-top: 0.25em;
+    line-height: 1.4;
+  }
+}
+
+@include mq {
+  .top-list {
+    li {
+      width: 50%;
+    }
+
+    li img {
+      max-width: 120px;
+    }
+  }
 }
